@@ -29,19 +29,17 @@ module x_carriage_beltcut(){
  // Smooth entrance
  translate([-66,21.5+10,14]) rotate([45,0,0]) cube([67,15,15]);
  // Teeth cuts
-holder_tooth_width = belt_tooth_distance - belt_tooth_width;
+ holder_tooth_width = belt_tooth_distance - belt_tooth_width;
  teeth_count = ((33-4.5)/2 - holder_tooth_width)/belt_tooth_distance;
  teeth_count_module = teeth_count % 1;
  position_tweak = belt_tooth_distance*(teeth_count_module)/2;
  loop_count = teeth_count-teeth_count_module+1;
  
-translate([-16.5, 21.5+8, 6])
+ translate([-16.5, 21.5+8, 6])
  {
  holder_teeth(belt_tooth_distance, belt_tooth_width, position_tweak, loop_count);
  mirror([1, 0, 0]) holder_teeth(belt_tooth_distance, belt_tooth_width, position_tweak, loop_count);
  }
- 
-
 }
 
 module holder_teeth(belt_tooth_distance, belt_tooth_width, position_tweak, loop_count) {

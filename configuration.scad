@@ -18,5 +18,6 @@ belt_tooth_ratio =
 
 belt_tooth_width = 
 	(belt_type=="HTD3") ? 1.3 :
+	(belt_type=="GT2") ? 0.5 :
 	1;
 
